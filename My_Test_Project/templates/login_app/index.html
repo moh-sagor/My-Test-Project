@@ -1,0 +1,18 @@
+{% extends 'login_app/base.html' %}
+{% block body_block %}
+
+{% if user.is_authenticated %}
+
+<h3>Hi, {{ user_basic_info.username }} </h3>
+<h3>Your Email : {{user_basic_info.email }} </h3>
+<h3> Your Facebook Id : <a class="btn btn-primary" href="{{user_more_info.facebook_id }}">Facebook</a> </h3>
+<img src="/media/{{user_more_info.profile_pic}}" alt="Not Found" width='200px'>
+
+{% else %}
+
+<div class="alert alert-warning">You are not Logged in !!</div>
+
+{% endif %}
+
+{% endblock %}
+
